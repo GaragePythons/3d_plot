@@ -8,16 +8,13 @@ const double function (double kx, double ky) {
 }
 
 int main() {
-    std::ofstream datafile;
-    datafile.open("dat");
+    std::ofstream datafile("dat");
 
     for (double kx = -5; kx < 5.1; kx += 0.1) {
-    for (double ky = -5; ky < 5.1; ky += 0.1) {
-        datafile << kx << "\t" << ky << "\t" << function(kx, ky) << "\n";
+        for (double ky = -5; ky < 5.1; ky += 0.1) {
+            datafile << kx << "\t" << ky << "\t" << function(kx, ky) << "\n";
+        }
     }
-    }
-
-    datafile.close();
 
     return 0;
 }
